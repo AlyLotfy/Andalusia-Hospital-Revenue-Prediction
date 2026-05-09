@@ -1,4 +1,4 @@
-#  Andalusia Hospital — Revenue Prediction
+# Andalusia Hospital — Revenue Prediction
 
 **Forecasting realized hospital revenue from clinic workload at the Hospital × Specialty × Date grain.**
 
@@ -9,7 +9,7 @@
 
 ---
 
-##  Overview
+## Overview
 
 This repository explores the relationship between **operational workload** (working hours, number of clinics, actual booked slots) and **realized revenue** at **Andalusia Hospital Group**. The goal is a predictive model that lets hospital management forecast revenue for the next planning window given the staffing schedule.
 
@@ -19,7 +19,7 @@ This work was done in collaboration with the same hospital partner as my graduat
 
 ---
 
-##  Problem Statement
+## Problem Statement
 
 > _Given how many clinics are open, how many working hours are scheduled, and how many slots are actually booked — what revenue should the hospital expect at each (hospital, specialty, date) cell?_
 
@@ -33,7 +33,7 @@ This is a **regression** problem with strong **time-series and panel** character
 
 ---
 
-##  Dataset
+## Dataset
 
 The dataset links three operational dimensions with the financial outcome:
 
@@ -51,7 +51,7 @@ The dataset links three operational dimensions with the financial outcome:
 
 ---
 
-##  Approach
+## Approach
 
 The notebook (`Final.ipynb`) walks through:
 
@@ -64,7 +64,7 @@ The notebook (`Final.ipynb`) walks through:
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 - **Python 3.10+**
 - **pandas / NumPy** — data wrangling
@@ -75,14 +75,14 @@ The notebook (`Final.ipynb`) walks through:
 
 ---
 
-##  Reproducing The Results
+## Reproducing The Results
 
 ```bash
 git clone https://github.com/AlyLotfy/Andalusia-Hospital-Revenue-Prediction.git
 cd Andalusia-Hospital-Revenue-Prediction
 
 python -m venv venv
-venv\Scripts\activate         # Windows
+venv\Scripts\activate # Windows
 pip install pandas numpy scikit-learn lightgbm matplotlib seaborn jupyter
 
 jupyter notebook Final.ipynb
@@ -90,7 +90,7 @@ jupyter notebook Final.ipynb
 
 ---
 
-##  Key Findings
+## Key Findings
 
 - **Slot utilization** (`Actual_Slots / Capacity`) is the single strongest predictor — more so than raw working hours
 - **Day-of-week** dominates seasonality; Egyptian Friday/Saturday weekends shape the curve
@@ -101,7 +101,7 @@ _(Concrete numeric results are in the notebook.)_
 
 ---
 
-##  Future Work
+## Future Work
 
 - Hierarchical / mixed-effects model that pools weak signal across thin-data specialties
 - Probabilistic forecasts (quantile regression / conformal prediction) instead of point estimates
@@ -110,13 +110,13 @@ _(Concrete numeric results are in the notebook.)_
 
 ---
 
-##  Related Work
+## Related Work
 
--  [Pepper Medical Assistance Robot](https://github.com/AlyLotfy/Pepper-Medical-Assistance-Robot) — the patient-facing side of the same hospital partnership
+- [Pepper Medical Assistance Robot](https://github.com/AlyLotfy/Pepper-Medical-Assistance-Robot) — the patient-facing side of the same hospital partnership
 
 ---
 
-## 📄 License
+## License
 
-Academic project, AAST Computer Engineering. All rights reserved.
+Academic project, AAST College of Artificial Intelligence. All rights reserved.
 The raw dataset is the property of Andalusia Hospital Group and is not redistributed.
